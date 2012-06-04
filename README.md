@@ -3,22 +3,45 @@ Twitter-SNA
 
 README
 
-Create Graphs, v 2.0
-===========
-filename: creatgraph_v2.py
+There are two scripts designed to used together to create dynamic social networks from Twitter.com
 
-This script creates a dynamic 1-mode digraph from Twitter.com messages.
+**CollectTweets.r** gathers tweets containing the same hashtag, and **CreateGraph.py** makes social networks of the resulting 
+data.
+
+(Note: **CreateEdgelist.py** was renamed to **CreateGraph.py**, but I kept the original file to maintain the change history.)
+
+Collect Tweets, v 1.0
+----
+filename: CollecTweets.r
+description: collect tweets containing a user-specified "hash-tag".
+website: http://www.russellshepherd.com/d/?q=blog/replacing-twapperkeeper-r
+----
+The hashtag variable contains the text of the hashtag (minus the actual pound sign) you want the API to search for,
+and max.results contains the number of tweets you'd like to pull (up to a max of 1500; see more about limitations at the website).
+
+The results are exported in a .csv file with the following format:
+
+    [row number], publication date, tweet content, author name
+
+
+Create Graphs, v 2.0
+----
+filename: CreatGraph.py
+description: create a dynamic 1-mode digraph of Twitter users from a csv.
+website: http://www.russellshepherd/d/?q=blog/dynamic-twitter-graphs
+----
 
 HOW TO USE:
 This program accepts three arguments: the input filename, the output filename,
 and a time argument (integer representing the number of hours)
 
-Example: python readtweetsml_v2.py inputfilenamehere.csv outputfilenamehere.txt 3
+Example: 
+    python readtweetsml_v2.py inputfilenamehere.csv outputfilenamehere.txt 3
 
 INPUT:
 a csv file with three columns Date, Tweet content, username
 Example: 
-"Fri, 08 Jan 2012, 13:22:45 +0000","RT@cnn @johndoe Protest in Egypt #jan25","username@twitter.com (Authorname)"
+    "Fri, 08 Jan 2012, 13:22:45 +0000","RT@cnn @johndoe Protest in Egypt #jan25","username@twitter.com (Authorname)"
 
 The "date" field is formatted as: DoW, dd MMM YYYY HH:MM:SS +0000
 +0000 refers to the timezone
