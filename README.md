@@ -12,9 +12,10 @@ data.
 
 Collect Tweets, v 1.0
 ----
-filename: CollecTweets.r
-description: collect tweets containing a user-specified "hash-tag".
-website: http://www.russellshepherd.com/d/?q=blog/replacing-twapperkeeper-r
+filename: CollecTweets.r  
+description: collect tweets containing a user-specified "hash-tag".  
+website: http://www.russellshepherd.com/d/?q=blog/replacing-twapperkeeper-r  
+  
 ----
 The hashtag variable contains the text of the hashtag (minus the actual pound sign) you want the API to search for,
 and max.results contains the number of tweets you'd like to pull (up to a max of 1500; see more about limitations at the website).
@@ -26,21 +27,22 @@ The results are exported in a .csv file with the following format:
 
 Create Graphs, v 2.0
 ----
-filename: CreatGraph.py
-description: create a dynamic 1-mode digraph of Twitter users from a csv.
-website: http://www.russellshepherd/d/?q=blog/dynamic-twitter-graphs
+filename: CreatGraph.py  
+description: create a dynamic 1-mode digraph of Twitter users from a csv.  
+website: http://www.russellshepherd/d/?q=blog/dynamic-twitter-graphs  
+  
 ----
-
-HOW TO USE:
+  
+HOW TO USE:  
 This program accepts three arguments: the input filename, the output filename,
-and a time argument (integer representing the number of hours)
-
-Example: 
+and a time argument (integer representing the number of hours).  
+  
+Example:  
     python readtweetsml_v2.py inputfilenamehere.csv outputfilenamehere.txt 3
 
-INPUT:
-a csv file with three columns Date, Tweet content, username
-Example: 
+INPUT:   
+a csv file with three columns Date, Tweet content, username  
+  Example:  
     "Fri, 08 Jan 2012, 13:22:45 +0000","RT@cnn @johndoe Protest in Egypt #jan25","username@twitter.com (Authorname)"
 
 The "date" field is formatted as: DoW, dd MMM YYYY HH:MM:SS +0000
