@@ -38,4 +38,4 @@ for(i in 1:no.pages){
      
     } 
      
-write.csv(tweets.df,"tweets.csv")
+write.csv(tweets.df,"tweets.csv", col.names = FALSE, row.names = FALSE)
